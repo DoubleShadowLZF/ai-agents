@@ -5,7 +5,7 @@ from openai import OpenAI
 client = OpenAI()
 
 # 检索您之前创建的Assistant
-assistant_id = "asst_pF2pMtIHOL4CpXpyUdHkoKG3" # 你自己的助手ID
+assistant_id = "asst_Fc0qzx5qvxtGzx3lfYcO4ws1" # 你自己的助手ID
 assistant = client.beta.assistants.retrieve(assistant_id)
 print(assistant)
 
