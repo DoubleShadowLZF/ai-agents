@@ -47,7 +47,7 @@ def schedule_delivery(order_id: int, delivery_date: str):
 tools = [check_inventory, calculate_price, schedule_delivery]
 
 # 设置大模型
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 model = ChatOpenAI(temperature=0)
 
 # 设置计划者和执行者
@@ -59,5 +59,5 @@ executor = load_agent_executor(model, tools, verbose=True)
 agent = PlanAndExecute(planner=planner, executor=executor, verbose=True)
 
 # 运行Agent解决问题
-agent.run("查查玫瑰的库存然后给出出货方案！")
+agent.invoke("查查玫瑰的库存然后给出出货方案！")
 
